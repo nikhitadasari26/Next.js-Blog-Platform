@@ -1,0 +1,31 @@
+---
+title: 'Dynamic Routing in Next.js'
+date: '2023-11-15'
+excerpt: 'Next.js supports dynamic routes out of the box. You can create pages that support dynamic data by adding brackets to a page filename.'
+coverImage: '/assets/blog/preview/cover.jpg'
+---
+
+# Dynamic Routing in Next.js
+
+Dynamic routing allows you to create pages that depend on external data.
+
+## conventions
+
+- `[slug].js`: Matches `/post-1`, `/post-2`, etc.
+- `[...slug].js`: Matches `/post/1/2`, `/post/a/b/c`, etc.
+
+## getStaticPaths
+
+When using dynamic routes with SSG, you need to define a list of paths to be statically generated.
+
+```javascript
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { slug: 'hello-world' } },
+      { params: { slug: 'another-post' } }
+    ],
+    fallback: false
+  }
+}
+```

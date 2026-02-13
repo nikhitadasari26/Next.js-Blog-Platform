@@ -1,0 +1,35 @@
+---
+title: 'SEO with Next.js'
+date: '2023-11-01'
+excerpt: 'Search Engine Optimization (SEO) is crucial for any public-facing website. Next.js makes it easy to add meta tags, open graph tags, and JSON-LD structured data.'
+coverImage: '/assets/blog/preview/cover.jpg'
+---
+
+# SEO with Next.js
+
+Next.js provides a built-in `Head` component for appending elements to the `<head>` of the page.
+
+## Key Elements
+
+- Title
+- Meta Description
+- Open Graph Tags
+- Canonical URLs
+
+> "Content is King, but distribution is Queen and she wears the pants."
+
+```jsx
+import Head from 'next/head'
+
+function IndexPage() {
+  return (
+    <div>
+      <Head>
+        <title>My Page Title</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <p>Hello world!</p>
+    </div>
+  )
+}
+```
